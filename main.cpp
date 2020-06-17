@@ -15,17 +15,21 @@ video: Chapter 2 - Part 3
  
  
  1) Write down the names of all of the primitives available in C++ (excluding wchar_t) here: 
+        char
+        int
+        float
+        double
+        bool
  
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
+
+
+
+
+
+
+
+
+
 2) for each primitive type, write out 3 variable declarations inside the variableDeclaration() function on line 59.
     a) give each variable declaration an initial value
         - just ignore wchar_t. you do not need to declare 3 variables of type 'wchar_t'
@@ -57,9 +61,49 @@ void variableDeclarations()
     //example:
     int number = 2; //declaration of a primitive named 'number' with an initial value of '2'
     
-    
-    
     ignoreUnused(number); //passing each variable declared to the ignoreUnused() function
+
+    // char
+    char studentGrade = 'B';
+    char middleInitial = 'T';
+    char lowercaseLetter = 'g';
+
+    // int
+    int customerAge = 21;
+    int speedLimit = 55;
+    int outsideTemp = -10;
+
+    // float 
+    float studentGPA = 3.5f;
+    float interestRate = 12.5f;
+    float percentComplete = 58.f;
+
+    // double
+    double furnaceTemp = 1800.0;
+    double discountAmount = -8345.76;
+    double lotteryJackpot = 308000000.2;
+
+    // bool
+    bool accountInArrears = false;
+    bool collegeDegree = true;
+    bool roomOccupied = false;
+
+    // calls
+    ignoreUnused(studentGrade);
+    ignoreUnused(middleInitial);
+    ignoreUnused(lowercaseLetter);
+    ignoreUnused(customerAge);
+    ignoreUnused(speedLimit);
+    ignoreUnused(outsideTemp);
+    ignoreUnused(studentGPA);
+    ignoreUnused(interestRate);
+    ignoreUnused(percentComplete);
+    ignoreUnused(furnaceTemp);
+    ignoreUnused(discountAmount);
+    ignoreUnused(lotteryJackpot);
+    ignoreUnused(accountInArrears);
+    ignoreUnused(collegeDegree);
+    ignoreUnused(roomOccupied);
 }
 /*
  10 functions
@@ -74,43 +118,81 @@ bool rentACar(int rentalDuration, int carType = 0)  //function declaration with 
 /*
  1)
  */
-
+bool bookAFlight(char carrier, int flightNumber, char row)
+{
+    ignoreUnused(carrier, flightNumber, row);
+    return {};
+}
 /*
  2)
  */
-
+int setRoomClimate(float temperature, char mode = 'C')
+{
+    ignoreUnused(temperature, mode);
+    return {};
+}
 /*
  3)
  */
-
+double depositCash(int accountNumber, double amount)
+{
+    ignoreUnused(accountNumber, amount);
+    return {};
+}
 /*
  4)
  */
-
+void drawABox(int length, int width, int height)
+{
+    ignoreUnused(length, width, height);
+}
 /*
  5)
  */
-
+float convertTemperature(float tempValue, char convertToScale = 'F')
+{
+    ignoreUnused(tempValue, convertToScale);
+    return {};
+}
 /*
  6)
  */
-
+double generateInvoice (double totalPrice, double salestaxRate = 4.5)
+{
+    ignoreUnused(totalPrice, salestaxRate);
+    return {};
+}
 /*
  7)
  */
-
+int reserveAParkingSpace(char custName[25], char carMake[25], float rentalHours, double hourlyRate = 25.00)
+{
+    ignoreUnused(custName, carMake, rentalHours, hourlyRate) ;
+    return {};
+}
 /*
  8)
  */
-
+void setTheTime(int hour, int minutes, bool useMilitaryTime = false)
+{
+    ignoreUnused(hour, minutes, useMilitaryTime);
+}
 /*
  9)
  */
-
+double calculateInterest(double principal, float rate, int timeInDays)
+{
+    ignoreUnused(principal, rate, timeInDays);
+    return {};
+}
 /*
  10)
  */
-
+ int sum2(int firstNumber, int secondNumber)
+ {
+     ignoreUnused(firstNumber, secondNumber);
+     return {};
+ }
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
 
@@ -131,27 +213,49 @@ int main()
     auto carRented = rentACar(6, 2); 
     
     //1)
+    auto flightBooked = bookAFlight('A', 245, 18);
     
     //2)
-    
+    auto errorCode = setRoomClimate(68.0);
+
     //3)
-    
+    auto accountBalance =  depositCash(117, 500.00); 
+
     //4)
-    
+    drawABox(100, 400, 10);
+
     //5)
-    
+    auto ConvertedTempValue =  convertTemperature(78.2f, 'C');  
+
     //6)
-    
+    auto invoiceTotalDue =  generateInvoice (248.16); 
+
     //7)
-    
+    char carOwner[25] = "John Smith";
+    char carMake[25] = "Buick";
+    auto reservedSpaceNumber = reserveAParkingSpace(carOwner, carMake, 16.f);
+
     //8)
-    
+    setTheTime(7, 45);
+
     //9)
-    
+    auto interest = calculateInterest(1500.00, 1.2f, 45);
+
     //10)
-    
+    auto result = sum2(25, 14);
     
     ignoreUnused(carRented);
+    /*
+    */
+    ignoreUnused(flightBooked);
+    ignoreUnused(errorCode);
+    ignoreUnused(accountBalance);
+    ignoreUnused(ConvertedTempValue);
+    ignoreUnused(invoiceTotalDue);    
+    ignoreUnused(reservedSpaceNumber);
+    ignoreUnused(interest);
+    ignoreUnused(result);
+
     std::cout << "good to go!" << std::endl;
     return 0;    
 }
