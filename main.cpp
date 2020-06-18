@@ -89,21 +89,21 @@ void variableDeclarations()
     bool roomOccupied = false;
 
     // calls
-    ignoreUnused(studentGrade);
-    ignoreUnused(middleInitial);
-    ignoreUnused(lowercaseLetter);
-    ignoreUnused(customerAge);
-    ignoreUnused(speedLimit);
-    ignoreUnused(outsideTemp);
-    ignoreUnused(studentGPA);
-    ignoreUnused(interestRate);
-    ignoreUnused(percentComplete);
-    ignoreUnused(furnaceTemp);
-    ignoreUnused(discountAmount);
-    ignoreUnused(lotteryJackpot);
-    ignoreUnused(accountInArrears);
-    ignoreUnused(collegeDegree);
-    ignoreUnused(roomOccupied);
+    ignoreUnused(studentGrade, 
+                    middleInitial,
+                    lowercaseLetter,
+                    customerAge,
+                    speedLimit,
+                    outsideTemp,
+                    studentGPA,
+                    interestRate,
+                    percentComplete,
+                    furnaceTemp,
+                    discountAmount,
+                    lotteryJackpot,
+                    accountInArrears,
+                    collegeDegree,
+                    roomOccupied);
 }
 /*
  10 functions
@@ -165,9 +165,9 @@ double generateInvoice (double totalPrice, double salestaxRate = 4.5)
 /*
  7)
  */
-int reserveAParkingSpace(char custName[25], char carMake[25], float rentalHours, double hourlyRate = 25.00)
+int reserveAParkingSpace(char custInit, char carCode, float rentalHours, double hourlyRate = 25.00)
 {
-    ignoreUnused(custName, carMake, rentalHours, hourlyRate) ;
+    ignoreUnused(custInit, carCode, rentalHours, hourlyRate) ;
     return {};
 }
 /*
@@ -225,15 +225,13 @@ int main()
     drawABox(100, 400, 10);
 
     //5)
-    auto ConvertedTempValue =  convertTemperature(78.2f, 'C');  
+    auto convertedTempValue =  convertTemperature(78.2f, 'C');  
 
     //6)
     auto invoiceTotalDue =  generateInvoice (248.16); 
 
     //7)
-    char carOwner[25] = "John Smith";
-    char carMake[25] = "Buick";
-    auto reservedSpaceNumber = reserveAParkingSpace(carOwner, carMake, 16.f);
+    auto reservedSpaceNumber = reserveAParkingSpace('S', 'F', 16.f);
 
     //8)
     setTheTime(7, 45);
@@ -244,17 +242,17 @@ int main()
     //10)
     auto result = sum2(25, 14);
     
-    ignoreUnused(carRented);
+    ignoreUnused(carRented);    
     /*
     */
-    ignoreUnused(flightBooked);
-    ignoreUnused(errorCode);
-    ignoreUnused(accountBalance);
-    ignoreUnused(ConvertedTempValue);
-    ignoreUnused(invoiceTotalDue);    
-    ignoreUnused(reservedSpaceNumber);
-    ignoreUnused(interest);
-    ignoreUnused(result);
+    ignoreUnused(flightBooked,
+                    errorCode,
+                    accountBalance,
+                    convertedTempValue,
+                    invoiceTotalDue,
+                    reservedSpaceNumber,
+                    interest,
+                    result);
 
     std::cout << "good to go!" << std::endl;
     return 0;    
